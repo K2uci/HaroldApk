@@ -1,6 +1,6 @@
 import React from 'react';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import { X } from 'lucide-react-native';
 
 interface FilterDrawerProps {
   visible: boolean;
@@ -46,7 +46,7 @@ export function FilterDrawer({ visible, onClose, onFilterSelect, isDark }: Filte
         <View style={[styles.header, { borderBottomColor: isDark ? '#2c2e33' : '#eee' }]}>
           <Text style={[styles.title, { color: isDark ? '#fff' : '#000' }]}>Filters</Text>
           <TouchableOpacity onPress={onClose}>
-            <X size={24} color={isDark ? '#fff' : '#000'} />
+            <Ionicons name='close-outline' size={24} color={isDark ? '#fff' : '#000'} />
           </TouchableOpacity>
         </View>
         <ScrollView style={styles.content}>

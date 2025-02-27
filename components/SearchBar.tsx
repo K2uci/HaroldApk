@@ -1,9 +1,8 @@
 import React from 'react';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { useEffect, useState } from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
-import { Search } from 'lucide-react-native';
 import { pushDataSetByText } from '@/types/media';
-
 interface SearchBarProps {
   value: string;
   onChangeText: (text: string) => void;
@@ -29,7 +28,7 @@ export function SearchBar({ value, onChangeText, isDark , setRefreshing }: Searc
           backgroundColor: isDark ? '#2c2e33' : '#f1f3f5',
         },
       ]}>
-      <Search size={20} color={isDark ? '#adb5bd' : '#666'} style={styles.icon} />
+      <Ionicons name="search" size={20} color={isDark ? '#adb5bd' : '#666'} style={styles.icon}/>
       <TextInput
         style={[styles.input, { color: isDark ? '#fff' : '#000' }]}
         placeholder="Search titles..."

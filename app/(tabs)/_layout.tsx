@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Tabs } from 'expo-router';
-import { Menu, AlertCircle, Sun, Moon } from 'lucide-react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { TouchableOpacity, View } from 'react-native';
 import { useColorScheme } from '../../hooks/useColorScheme';
 import { Alert } from '@/components/Alert';
 
 export default function TabLayout() {
   const { isDark, toggleColorScheme } = useColorScheme();
-  const [isModalOpen, setModalOpen] = useState(false); // Estado para controlar el modal
+  const [isModalOpen, setModalOpen] = useState(false);
 
   return (
     <View style={{ flex: 1 }}>
@@ -26,19 +26,19 @@ export default function TabLayout() {
             title: 'Harold Stream',
             headerLeft: () => (
               <TouchableOpacity onPress={() => global.toggleDrawer?.()}>
-                <Menu size={24} style={{ marginLeft: 16 }} color={isDark ? '#fff' : '#000'} />
+                <Ionicons name="menu" style={{ marginLeft: 16 }} size={24} color={isDark ? '#fff' : '#000'} />
               </TouchableOpacity>
             ),
             headerRight: () => (
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <TouchableOpacity onPress={() => setModalOpen(true)} style={{ marginRight: 16 }}>
-                  <AlertCircle size={24} color={isDark ? '#fff' : '#000'} />
+                  <Ionicons name="alert-circle" size={24} color={isDark ? '#fff' : '#000'} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={toggleColorScheme} style={{ marginRight: 16 }}>
                   {isDark ? (
-                    <Sun size={24} color="#fff" />
+                    <Ionicons name="sunny-outline" size={30} color="#fff" />
                   ) : (
-                    <Moon size={24} color="#000" />
+                    <Ionicons name="moon" size={24} color="#000" />
                   )}
                 </TouchableOpacity>
               </View>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TriangleAlert } from 'lucide-react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { StyleSheet, Text, View, Modal, Button } from 'react-native';
 
 interface ModalInfo {
@@ -17,7 +17,7 @@ export function Alert({ isOpen, setOpen }: ModalInfo) {
     >
       <View style={styles.modalView}>
         <Text style={styles.modalText1}>! Alert !</Text>
-        <TriangleAlert size={180} color='#fff' />
+        <Ionicons name='alert-circle-outline' size={180} color='#fff'/>
         <Text style={styles.modalText}>¡This is the Beta version of the application, more changes coming soon!</Text>
         <Text style={styles.modalTextContac}>Gmail contact: Astroreal031@gmail.com</Text>
         <Button title="Cerrar" onPress={() => setOpen(false)} />
